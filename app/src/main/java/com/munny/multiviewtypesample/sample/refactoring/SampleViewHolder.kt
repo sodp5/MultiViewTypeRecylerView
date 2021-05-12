@@ -20,7 +20,7 @@ sealed class SampleViewHolder<E: SampleItem>(
         private val binding: ItemTextBinding
     ) : SampleViewHolder<SampleItem.NameItem>(binding) {
         override fun bind(item: SampleItem.NameItem) {
-            binding.text = item.str
+            binding.text = item.name
         }
     }
 
