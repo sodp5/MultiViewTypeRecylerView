@@ -1,3 +1,3 @@
 package com.munny.multiviewtypesample.sample
 
-data class SampleStringItem(val str: String)
+data class NameItem(val name: String)

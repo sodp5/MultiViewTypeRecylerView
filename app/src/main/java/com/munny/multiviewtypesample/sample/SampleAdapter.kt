@@ -13,8 +13,8 @@ class SampleAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
-            STRING_VIEW_TYPE -> SampleStringViewHolder(viewBind(parent, R.layout.item_text))
-            INT_VIEW_TYPE -> SampleIntViewHolder(viewBind(parent, R.layout.item_number))
+            NAME_VIEW_TYPE -> NameViewHolder(viewBind(parent, R.layout.item_text))
+            IMAGE_VIEW_TYPE -> ImageViewHolder(viewBind(parent, R.layout.item_number))
             else -> throw Exception("unknown type!!")
         }
     }
@@ -32,21 +32,21 @@ class SampleAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is SampleIntViewHolder -> holder.bind(itemList[position] as SampleIntItem)
-            is SampleStringViewHolder -> holder.bind(itemList[position] as SampleStringItem)
+            is ImageViewHolder -> holder.bind(itemList[position] as ImageItem)
+            is NameViewHolder -> holder.bind(itemList[position] as NameItem)
         }
     }
 
     override fun getItemViewType(position: Int): Int {
         return when(itemList[position]) {
-            is SampleStringItem -> STRING_VIEW_TYPE
-            is SampleIntItem -> INT_VIEW_TYPE
+            is NameItem -> NAME_VIEW_TYPE
+            is ImageItem -> IMAGE_VIEW_TYPE
             else -> throw Exception("unknown type!!")
         }
     }
 
     companion object {
-        const val STRING_VIEW_TYPE = 0
-        const val INT_VIEW_TYPE = 1
+        const val NAME_VIEW_TYPE = 0
+        const val IMAGE_VIEW_TYPE = 1
     }
 }
