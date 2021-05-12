@@ -1,8 +1,10 @@
 package com.munny.multiviewtypesample.sample.refactoring
 
+import androidx.annotation.DrawableRes
+
 sealed class SampleItem(private val sampleViewType: SampleViewType) {
-    data class SampleStringItem(val str: String) : SampleItem(SampleViewType.STRING)
-    data class SampleIntItem(val i: Int) : SampleItem(SampleViewType.INT)
+    data class NameItem(val str: String) : SampleItem(SampleViewType.NAME)
+    data class ImageItem(@DrawableRes val imageRes: Int) : SampleItem(SampleViewType.IMAGE)
 
     fun getViewType() = sampleViewType
 }

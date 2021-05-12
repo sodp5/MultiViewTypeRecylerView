@@ -8,18 +8,18 @@ import com.munny.multiviewtypesample.databinding.ItemTextBinding
 sealed class SampleViewHolder<E: SampleItem>(
     binding: ViewDataBinding
 ) : RecyclerView.ViewHolder(binding.root) {
-    data class SampleIntViewHolder(
+    data class ImageViewHolder(
         private val binding: ItemNumberBinding
-    ) : SampleViewHolder<SampleItem.SampleIntItem>(binding) {
-        override fun bind(item: SampleItem.SampleIntItem) {
-            binding.number = item.i
+    ) : SampleViewHolder<SampleItem.ImageItem>(binding) {
+        override fun bind(item: SampleItem.ImageItem) {
+            binding.imageRes = item.imageRes
         }
     }
 
-    data class SampleStringViewHolder(
+    data class NameViewHolder(
         private val binding: ItemTextBinding
-    ) : SampleViewHolder<SampleItem.SampleStringItem>(binding) {
-        override fun bind(item: SampleItem.SampleStringItem) {
+    ) : SampleViewHolder<SampleItem.NameItem>(binding) {
+        override fun bind(item: SampleItem.NameItem) {
             binding.text = item.str
         }
     }

@@ -10,10 +10,10 @@ class SampleViewHolderFactory {
     @Suppress("UNCHECKED_CAST")
     fun getViewHolder(parent: ViewGroup, viewType: SampleViewType): SampleViewHolder<SampleItem> {
         return when (viewType) {
-            SampleViewType.STRING ->
-                SampleViewHolder.SampleStringViewHolder(viewBind(parent, R.layout.item_text))
-            SampleViewType.INT ->
-                SampleViewHolder.SampleIntViewHolder(viewBind(parent, R.layout.item_number))
+            SampleViewType.NAME ->
+                SampleViewHolder.NameViewHolder(viewBind(parent, R.layout.item_text))
+            SampleViewType.IMAGE ->
+                SampleViewHolder.ImageViewHolder(viewBind(parent, R.layout.item_number))
         } as SampleViewHolder<SampleItem>
     }
 
